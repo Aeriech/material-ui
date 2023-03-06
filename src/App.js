@@ -1,10 +1,10 @@
 import './App.css';
-import ResponsiveAppBar from './Components/AppBar';
+import Login from './Components/Login';
 
 function App() {
   return (
     <div className="App">
-     <ResponsiveAppBar/>
+     <Login show={true}/>
     </div>
   );
 }
