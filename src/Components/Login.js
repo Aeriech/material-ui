@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import ResponsiveAppBar from './AppBar';
 import SignIn from './SignIn';
+import AccountSetUp from './AccountSetUp';
 
 
 export default function Login(props) {
@@ -16,12 +17,18 @@ export default function Login(props) {
     const Username = "Aeriech";
     const Password = "12345";
     const [isVisible, setIsVisible] = useState(props.show);
+    const [show, setShow] = useState(true);
     const [sub, setSub] = useState(true);
 
     const submit = () => {
-        if ((user === Username && pass === Password) || (user === props.user && pass === props.pass)) {
+        
+        if ((user === Username && pass === Password)) {
             setIsVisible(false);
-        } else {
+        }
+        else if ((user === props.user && pass === props.pass)) {
+          setShow(false);
+        } 
+        else {
             alert("Invalid Username or Password");
         }
     }
@@ -30,14 +37,21 @@ export default function Login(props) {
         setSub(false);
     }
 
-
     if(!sub){
         return <SignIn/>;
     }
 
     if (!isVisible) {
         return <ResponsiveAppBar user={props.user} pass={props.pass}/>;
-      }
+    }
+
+    if (!show) {
+
+      
+      return <AccountSetUp user={props.user} pass={props.pass}/>;
+    
+  }
+
   return (
     <Box
       component="form"
@@ -49,7 +63,7 @@ export default function Login(props) {
     >
       
       <div>
-        <h1>Login</h1>
+        <h1>***Login***</h1>
         <TextField
           required
           id="filled-required"

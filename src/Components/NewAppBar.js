@@ -13,14 +13,13 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import BoxSx from './Profile';
-import Account from './Account';
 import Login from './Login';
+import NewProfile from './NewProfile';
 
 const pages = ['Profile', 'Account'];
 const settings = ['SignOut'];
 
-function ResponsiveAppBar(props) {
+function NewAppBar(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -79,7 +78,7 @@ function ResponsiveAppBar(props) {
   };
 
   if (!isVisible) {
-    return <Login show = {true} user={props.user} pass={props.pass}/>;
+    return <Login show={true} user={props.user} pass={props.pass}/>;
   }
 
   return (
@@ -186,7 +185,7 @@ function ResponsiveAppBar(props) {
               onClick={handleOpenUserMenu} 
 
               sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="https://scontent.fcrk3-1.fna.fbcdn.net/v/t39.30808-6/276994360_3400770733536634_5188095602097092028_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_eui2=AeGssszVCUXndLKRyh9NLN6WopwT7ylJ1MqinBPvKUnUym2Gc4ygr2ub7UCAgryzB_-Ac_8EF9tRvis8FCnXH6g9&_nc_ohc=b7KbV9sVzVUAX9Q7j8I&_nc_ht=scontent.fcrk3-1.fna&oh=00_AfC8qD2E2DxhNepM_sJMdfXfVXFyL0DHrseHxqAMloCMiA&oe=640AACF1" />
+                <Avatar alt="Remy Sharp" src="https://kansai-resilience-forum.jp/wp-content/uploads/2019/02/IAFOR-Blank-Avatar-Image-1.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -219,9 +218,8 @@ function ResponsiveAppBar(props) {
         </Toolbar>
       </Container>
     </AppBar>
-    {show && <BoxSx/>}
-    {acc && <Account/>}
+    {show && <NewProfile fname={props.fname} lname={props.lname} age={props.age} hobby={props.hobby}/>}
     </div>
   );
 }
-export default ResponsiveAppBar;
+export default NewAppBar;
