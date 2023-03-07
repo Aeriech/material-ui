@@ -13,7 +13,7 @@ export default function AccountSetUp(props) {
     const [Hobby, setHobby] = useState('');
 
     //new Account set up passing data
-    const [show, setShow] = useState(props.show);
+    const [show, setShow] = useState(true);
     const Submit = () => {
         if(Fname !== '' && Lname !== '' && Age !== '' && Hobby !== ''){
         setShow(false);

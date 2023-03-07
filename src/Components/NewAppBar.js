@@ -94,7 +94,7 @@ function NewAppBar(props) {
 
   //to hide current component and open login page
   if (!isVisible) {
-    return <Login show={true} user={props.user} pass={props.pass} fname={props.fname} lname={props.fname} age={props.age} hobby={props.hobby}/>;
+    return <Login show={true} user={props.user} pass={props.pass}/>;
   }
 
   return (

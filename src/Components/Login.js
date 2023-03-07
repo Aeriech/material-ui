@@ -49,12 +49,8 @@ export default function Login(props) {
 
     //Open Account set up for new user
     if (!show) {
-        return <AccountSetUp show={true} user={props.user} pass={props.pass} fname={props.fname} lname={props.fname} age={props.age} hobby={props.hobby}/>; 
+      return <AccountSetUp user={props.user} pass={props.pass}/>;
     }
-
-    // if (props.fname !== '' && props.lname !== '' && props.age !== '' && props.hobby !== '') {
-    //   return <AccountSetUp show={false} user={props.user} pass={props.pass} fname={props.fname} lname={props.fname} age={props.age} hobby={props.hobby}/>;
-    // }
 
     //return log in component
   return (
