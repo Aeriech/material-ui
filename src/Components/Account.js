@@ -17,6 +17,7 @@ export default function Account() {
   );
 }
 
+//show facebook logo and set link to my profile when clicked
 function Facebook() {
   return (
     <>
@@ -27,6 +28,7 @@ function Facebook() {
   );
 }
 
+//show tiktok logo and set link to my profile when clicked
 function Tiktok() {
     return (
       <>

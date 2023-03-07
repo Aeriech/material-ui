@@ -31,21 +31,30 @@ function NewAppBar(props) {
     setAnchorElUser(event.currentTarget);
   };
 
+  //onclick of tab bar
   const handleCloseNavMenu = (e) => {
     setAnchorElNav(null);
+
+  //to pass data to showName button that the user choose profile
     if(e === 'Profile'){
         showName('Profile');
     }
+
+   //to pass data to showName button that the user choose account
     else if(e === 'Account'){
         showName('Account');
     }
   };
 
+  //false to hide profile
   const [show,setShow] = useState(false);
+
+  //false to hide account
   const [acc,setAcc] = useState(false);
 
     const showName = (e) =>{
 
+      //shows profile of new user and hides account
     if(e === 'Profile'){
      if (show === true) {
        setShow(false);
@@ -57,6 +66,7 @@ function NewAppBar(props) {
      }
     }
 
+    //show account of new user and hides profile
     else if(e === 'Account'){
         if (acc === true) {
           setAcc(false);
@@ -68,15 +78,21 @@ function NewAppBar(props) {
 
     }
 
+    //set to true to show current component
   const [isVisible, setIsVisible] = useState(true);
+
+  //onclick of sign out 
   const handleCloseUserMenu = (e) => {
     setAnchorElUser(null);
+
+    //set isVisible to false to hide current component and open login page
     if(e === 'SignOut'){
       setIsVisible(false);
     }
 
   };
 
+  //to hide current component and open login page
   if (!isVisible) {
     return <Login show={true} user={props.user} pass={props.pass}/>;
   }

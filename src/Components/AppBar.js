@@ -32,6 +32,7 @@ function ResponsiveAppBar(props) {
     setAnchorElUser(event.currentTarget);
   };
 
+  //Tab Options
   const handleCloseNavMenu = (e) => {
     setAnchorElNav(null);
     if(e === 'Profile'){
@@ -42,11 +43,14 @@ function ResponsiveAppBar(props) {
     }
   };
 
+  //data for showing or not of account and profile
   const [show,setShow] = useState(false);
   const [acc,setAcc] = useState(false);
 
+  //for onclick of profile or account
     const showName = (e) =>{
 
+    //show Profile and hide account
     if(e === 'Profile'){
      if (show === true) {
        setShow(false);
@@ -58,6 +62,7 @@ function ResponsiveAppBar(props) {
      }
     }
 
+    // Show Account and hide profile
     else if(e === 'Account'){
         if (acc === true) {
           setAcc(false);
@@ -69,15 +74,21 @@ function ResponsiveAppBar(props) {
 
     }
 
+  //to hide or not the current component
   const [isVisible, setIsVisible] = useState(true);
+
+  //for onclick on open setting or profile in right side
   const handleCloseUserMenu = (e) => {
     setAnchorElUser(null);
+
+    //to hide current component
     if(e === 'SignOut'){
       setIsVisible(false);
     }
 
   };
 
+  //hides current component and opens Login page
   if (!isVisible) {
     return <Login show = {true} user={props.user} pass={props.pass}/>;
   }

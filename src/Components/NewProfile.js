@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 
+//show profile of new user
 export default function NewProfile(props) {
   return (
     <Box sx={{

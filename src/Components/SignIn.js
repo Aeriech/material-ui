@@ -6,24 +6,31 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Login from './Login';
 
-
+ //Sign In For New USer
 export default function SignIn() {
-    //Sign In For New USer
+
+    //username and password of new user
     const[newuser, setNewUser] = useState('');
     const[newpass1, setNewPass1] = useState('');
     const[newpass2, setNewPass2] = useState('');
+
+    //true to show current component
     const[sub, setSub] = useState(true);
     
-
+    //onclick of submit button
     const newSubmit = () => {
-        if ((newpass1 === newpass2)) {
+      //if the user puts the same password for to textfield will alert that successful log in and set sub to false to hide sign in
+        if (newuser !== '' && newpass1 !== '' && (newpass1 === newpass2)) {
             alert("Succesful Sign In");
             setSub(false);
-        } else {
-            alert("Please Confirm Password");
+        } 
+        //if user puts wrong password or didnt put username
+        else {
+            alert("Please Confirm Password or Fill Up All Textfield");
         }
         }
 
+        //hide sign in and open log in with new users username and password
         if(!sub){
         return <Login user = {newuser} pass = {newpass1} show={true}/>;
         }

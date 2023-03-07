@@ -21,10 +21,11 @@ export default function Login(props) {
     const [sub, setSub] = useState(true);
 
     const submit = () => {
-        
+        //Log in for curreng user
         if ((user === Username && pass === Password)) {
             setIsVisible(false);
         }
+        //Log in for new user
         else if ((user === props.user && pass === props.pass)) {
           setShow(false);
         } 
@@ -32,26 +33,26 @@ export default function Login(props) {
             alert("Invalid Username or Password");
         }
     }
-
+    //Sign in button
     const signInButton = () => {
         setSub(false);
     }
-
+    //Open Sign In and Hide Login
     if(!sub){
         return <SignIn/>;
     }
 
+    //Open App Bar for current user
     if (!isVisible) {
         return <ResponsiveAppBar user={props.user} pass={props.pass}/>;
     }
 
+    //Open Account set up for new user
     if (!show) {
-
-      
       return <AccountSetUp user={props.user} pass={props.pass}/>;
-    
-  }
+    }
 
+    //return log in component
   return (
     <Box
       component="form"
@@ -63,7 +64,9 @@ export default function Login(props) {
     >
       
       <div>
+        
         <h1>***Login***</h1>
+
         <TextField
           required
           id="filled-required"
@@ -71,7 +74,9 @@ export default function Login(props) {
           variant="filled"
           onChange={(e) => setUser(e.target.value)}
         />
+
         <br></br>
+
         <TextField
           required
           id="filled-password-input"
@@ -81,17 +86,20 @@ export default function Login(props) {
           variant="filled"
           onChange={(e) => setPass(e.target.value)}
         />
+
         <br></br>
+
         <Button 
         variant="contained"
         onClick={submit}
         >Login</Button>
+
         <p></p>
+
         <Button 
         variant="contained"
         onClick={signInButton}
         >Sign In</Button>
-
 
       </div>
     </Box>

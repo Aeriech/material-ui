@@ -23,6 +23,7 @@ export default function AccountSetUp(props) {
         }
     }
 
+    //opens App bar for new user and pass the data from account set up
     if(!show){ 
         return <NewAppBar user={props.user} pass={props.pass} fname={Fname} lname={Lname} age={Age} hobby={Hobby}/>;
     }
