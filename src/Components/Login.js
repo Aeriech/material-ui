@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import ResponsiveAppBar from './AppBar';
 import SignIn from './SignIn';
 import AccountSetUp from './AccountSetUp';
+import NewAppBar from './NewAppBar';
 
 
 export default function Login(props) {
@@ -49,7 +50,12 @@ export default function Login(props) {
 
     //Open Account set up for new user
     if (!show) {
-      return <AccountSetUp user={props.user} pass={props.pass}/>;
+      if (props.fname !== '' && props.lname !== '' && props.age !== '' && props.hobby !== '') {
+        return <NewAppBar user={props.user} pass={props.pass} fname={props.fname} lname={props.lname} age={props.age} hobby={props.age}/>;
+      } else {
+        return <AccountSetUp user={props.user} pass={props.pass} fname={props.fname} lname={props.lname} age={props.age} hobby={props.age}/>;
+      }
+      
     }
 
     //return log in component

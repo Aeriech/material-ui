@@ -32,7 +32,7 @@ export default function SignIn() {
 
         //hide sign in and open log in with new users username and password
         if(!sub){
-        return <Login user = {newuser} pass = {newpass1} show={true}/>;
+        return <Login user = {newuser} pass = {newpass1} show={true} fname={''} lname={''} age={''} hobby={''}/>;
         }
 
   return (
