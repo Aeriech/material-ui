@@ -1,19 +1,30 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import './Style.css';
 
 export default function Account() {
   return (
+    <div
+    className='page'
+    >
     <Box sx={{
         textAlign: "center",
         maxWidth: "xl",
         maxHeight: "xl",
-        backgroundColor: 'primary.dark',
+        display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+        
       }}>
-        <br></br>
+        <div>
         <h1>**Tik Tok** **Facebook**</h1>
+        <br></br>
         <Tiktok/>
         <Facebook/>
+        </div>
       </Box>
+      </div>
+      
   );
 }
 

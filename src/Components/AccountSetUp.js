@@ -1,3 +1,4 @@
+import './Style.css';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -29,25 +30,39 @@ export default function AccountSetUp(props) {
     }
 
   return (
+    <div
+    className='div'
+    >
+    <div
+    className='innerDiv'
+    >
     <Box
+      className='BOX'
       component="form"
       sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
+        '& > :not(style)': { m: 1 },
       }}
       noValidate
       autoComplete="off"
     >
+    <div>
     <h1>***Account Set Up***</h1>
-      <TextField required id="filled-basic" label="First Name" variant="filled" onChange={(e) => setFname(e.target.value)}/>
-      <TextField required id="filled-basic" label="Last Name" variant="filled" onChange={(e) => setLname(e.target.value)}/>
-      <br></br>
-      <TextField required id="filled-basic" label="Age" variant="filled"onChange={(e) => setAge(e.target.value)} />
-      <TextField required id="filled-basic" label="Hobby" variant="filled" onChange={(e) => setHobby(e.target.value)}/>
-      <br></br>
+    <br></br>
+      <TextField required id="textfield" label="First Name" variant="filled" onChange={(e) => setFname(e.target.value)}/>
+      <TextField required id="textfield" label="Last Name" variant="filled" onChange={(e) => setLname(e.target.value)}/>
+      <TextField required id="textfield" label="Age" variant="filled"onChange={(e) => setAge(e.target.value)} />
+      <TextField required id="textfield" label="Hobby" variant="filled" onChange={(e) => setHobby(e.target.value)}/>
+      <p></p>
       <Button 
+        id='button'
         variant="contained"
         onClick={Submit}
         >Submit</Button>
+      <p></p>
+    </div>
     </Box>
+    </div>
+
+    </div>
   );
 }

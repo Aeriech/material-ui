@@ -1,4 +1,4 @@
-import './Login.css';
+import './Style.css';
 import * as React from 'react';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
@@ -36,7 +36,13 @@ export default function SignIn() {
         }
 
   return (
+    <div
+    className='div'>
+    <div
+    className='innerDiv'
+    >
         <Box
+        className='BOX'
       component="form"
       sx={{
         '& .MuiTextField-root': { m: 1, width: '25ch' },
@@ -49,7 +55,7 @@ export default function SignIn() {
         <h1>***Sign Up***</h1>
         <TextField
           required
-          id="filled-required"
+          id="textfield"
           label="Username"
           variant="filled"
           onChange={(e) => setNewUser(e.target.value)}
@@ -57,7 +63,7 @@ export default function SignIn() {
         <br></br>
         <TextField
           required
-          id="filled-password-input"
+          id="textfield"
           label="Password"
           type="password"
           autoComplete="current-password"
@@ -67,7 +73,7 @@ export default function SignIn() {
         <br></br>
         <TextField
           required
-          id="filled-password-input"
+          id="textfield"
           label="Confirm Password"
           type="password"
           autoComplete="current-password"
@@ -76,11 +82,15 @@ export default function SignIn() {
         />
         <br></br>
         <Button 
+        id='button'
         variant="contained"
         onClick={newSubmit}
         >Submit</Button>
+        <p></p>
       </div>
     </Box>
+    </div>
+    </div>
     )
   }
 
